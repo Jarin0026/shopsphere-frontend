@@ -18,7 +18,7 @@ function Products() {
 
   const fetchProducts = async () => {
     try {
-      const res = await api.get("/products", {
+      const res = await api.get("/api/products", {
         params: {
           page,
           size: 6,
@@ -38,7 +38,7 @@ function Products() {
 
   const toggleWishlist = async (productId) => {
     try {
-      const res = await api.post(`/wishlist/${productId}`);
+      const res = await api.post(`/api/wishlist/${productId}`);
       toast.success(res.data);
 
       setWishlistIds((prev) =>
@@ -55,7 +55,7 @@ function Products() {
 
   const handleAddToCart = async (id) => {
     try {
-      await api.post(`/cart/add?productId=${id}&quantity=1`);
+      await api.post(`/api/cart/add?productId=${id}&quantity=1`);
       toast.success("Added to cart.");
       window.dispatchEvent(new Event("cartUpdated"));
     } catch (error) {
@@ -78,14 +78,14 @@ function Products() {
 
   const fetchWishlistIds = async () => {
     try {
-      const res = await api.get("/wishlist");
+      const res = await api.get("/api/wishlist");
       setWishlistIds(res.data.map((p) => p.id));
     } catch {}
   };
 
   const fetchCategories = async () => {
     try {
-      const res = await api.get("/categories");
+      const res = await api.get("/api/categories");
       setCategories(res.data);
     } catch (err) {
       toast.error(err.response?.data?.message || "Failed to load categories");
