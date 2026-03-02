@@ -17,7 +17,7 @@ function ProductDetails() {
 
   const fetchProduct = async () => {
     try {
-      const res = await api.get(`products/${id}`);
+      const res = await api.get(`/api/products/${id}`);
       setProduct(res.data);
 
       if (res.data.imageUrls?.length > 0) {
@@ -30,7 +30,7 @@ function ProductDetails() {
 
   const checkWishlist = async () => {
     try {
-      const res = await api.get("/wishlist");
+      const res = await api.get("/api/wishlist");
       const exists = res.data.some((p) => p.id === Number(id));
       setIsWishlisted(exists);
     } catch (error) {
@@ -40,7 +40,7 @@ function ProductDetails() {
 
   const toggleWishlist = async () => {
     try {
-      const res = await api.post(`/wishlist/${id}`);
+      const res = await api.post(`/api/wishlist/${id}`);
       toast.success(res.data);
       setIsWishlisted((prev) => !prev);
       window.dispatchEvent(new Event("wishlistUpdated"));
@@ -51,7 +51,7 @@ function ProductDetails() {
 
   const handleAddToCart = async () => {
     try {
-      await api.post(`/cart/add?productId=${id}&quantity=1`);
+      await api.post(`/api/cart/add?productId=${id}&quantity=1`);
       toast.success("Added to cart.");
     } catch (error) {
       toast.error(error.response?.data?.message || "Failed to added to cart.");
