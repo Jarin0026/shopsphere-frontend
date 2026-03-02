@@ -23,13 +23,13 @@ function VendorProducts() {
   }, []);
 
   const fetchCategories = async () => {
-    const res = await api.get("/categories");
+    const res = await api.get("/api/categories");
     setCategories(res.data);
   };
 
   const fetchProducts = async () => {
     try {
-      const res = await api.get("/vendor/products", {
+      const res = await api.get("/api/vendor/products", {
         params: {
           page,
           size: 6,
@@ -47,7 +47,7 @@ function VendorProducts() {
 
   const handleDelete = async (id) => {
     try {
-      await api.delete(`/products/${id}`);
+      await api.delete(`/api/products/${id}`);
       toast.success("Product delete successfully.");
       fetchProducts();
     } catch (error) {
