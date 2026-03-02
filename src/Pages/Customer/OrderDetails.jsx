@@ -15,7 +15,7 @@ function OrderDetails() {
 
   const fetchOrder = async () => {
     try {
-      const res = await api.get(`/orders/${id}`);
+      const res = await api.get(`/api/orders/${id}`);
       setOrder(res.data);
       console.log(res.data);
     } catch (error) {
@@ -25,7 +25,7 @@ function OrderDetails() {
 
   const fetchTracking = async () => {
     try {
-      const res = await api.get(`/orders/${id}/tracking`);
+      const res = await api.get(`/api/orders/${id}/tracking`);
       setTracking(res.data);
     } catch (error) {
       toast.error(error.response?.data?.message || "Failed to load tracking.");
@@ -34,7 +34,7 @@ function OrderDetails() {
 
   const cancelOrder = async () => {
     try {
-      await api.put(`/orders/${id}/cancel`);
+      await api.put(`/api/orders/${id}/cancel`);
 
       toast.success("Order cancelled.");
       fetchOrder();
