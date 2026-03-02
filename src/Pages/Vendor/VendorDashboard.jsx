@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import api from "../../services/Api";
+import api from "../../services/Api.js";
 import toast from "react-hot-toast";
 import {
   PieChart,
