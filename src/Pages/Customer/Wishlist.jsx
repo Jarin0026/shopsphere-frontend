@@ -72,7 +72,7 @@ function Wishlist() {
           </div>
 
           <button
-            onClick={() => navigate("/customer")}
+            onClick={() => navigate("/api/customer")}
             className="px-6 py-3 rounded-xl bg-black dark:bg-blue-600 text-white 
           font-medium shadow-md hover:shadow-lg 
           hover:scale-[1.02] active:scale-[0.97] 
@@ -89,7 +89,7 @@ function Wishlist() {
             <div
               key={product.id}
               className="group bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden"
-              onClick={() => navigate(`/customer/product/${product.id}`)}
+              onClick={() => navigate(`/api/customer/product/${product.id}`)}
             >
               <div className="relative bg-gray-50 dark:bg-gray-900 p-6 flex items-center justify-center">
                 <img
@@ -123,7 +123,7 @@ function Wishlist() {
                 <button
                   onClick={(e) => {
                     e.stopPropagation();
-                    navigate(`/customer/product/${product.id}`);
+                    navigate(`/api/customer/product/${product.id}`);
                   }}
                   className="w-full py-2.5 rounded-xl bg-black dark:bg-blue-600 text-white 
                 font-medium shadow-md hover:shadow-lg 
