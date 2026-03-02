@@ -104,7 +104,7 @@ function MyOrders() {
               <div
                 key={order.orderId}
                 className="bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer p-6"
-                onClick={() => navigate(`/customer/orders/${order.orderId}`)}
+                onClick={() => navigate(`/api/customer/orders/${order.orderId}`)}
               >
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                   {/* Order Info */}
