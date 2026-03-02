@@ -8,7 +8,7 @@ function Payment() {
 
   const handlePayment = async () => {
     try {
-      const res = await api.post(`/payments/create-order?orderId=${orderId}`);
+      const res = await api.post(`/api/payments/create-order?orderId=${orderId}`);
 
       const data = res.data;
 
@@ -21,7 +21,7 @@ function Payment() {
         order_id: data.razorpayOrderId,
         handler: async function (response) {
           try {
-            await api.post("/payments/verify", null, {
+            await api.post("/api/payments/verify", null, {
               params: {
                 orderId: orderId,
                 razorpayPaymentId: response.razorpay_payment_id,
@@ -31,7 +31,7 @@ function Payment() {
             });
 
             toast.success("Payment successful");
-            navigate("/customer/orders");
+            navigate("/api/customer/orders");
           } catch (err) {
             toast.error("Payment verification failed");
           }
