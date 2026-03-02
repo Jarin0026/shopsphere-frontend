@@ -15,7 +15,7 @@ function Register() {
 
   const handleRegister = async () => {
     try {
-      const res = await api.post("/auth/register", form);
+      const res = await api.post("/api/auth/register", form);
 
       toast.success(res.data.message);
 
