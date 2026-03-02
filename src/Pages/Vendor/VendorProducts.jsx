@@ -139,7 +139,7 @@ function VendorProducts() {
 
               <div className="flex gap-3 mt-6">
                 <button
-                  onClick={() => navigate(`/api/vendor/edit-product/${product.id}`)}
+                  onClick={() => navigate(`/vendor/edit-product/${product.id}`)}
                   className="flex-1 py-2 rounded-xl bg-blue-600 cursor-pointer text-white font-medium hover:shadow-md hover:scale-[1.02] transition-all duration-200"
                 >
                   Edit
