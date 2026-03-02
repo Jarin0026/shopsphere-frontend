@@ -44,7 +44,7 @@ function CustomerLayout() {
 
   const fetchWishlistCount = async () => {
     try {
-      const res = await api.get("/wishlist");
+      const res = await api.get("/api/wishlist");
       setWishlistCount(res.data.length);
     } catch {
       setWishlistCount(0);
@@ -53,7 +53,7 @@ function CustomerLayout() {
 
   const fetchCartCount = async () => {
     try {
-      const res = await api.get("/cart");
+      const res = await api.get("/api/cart");
       setCartCount(res.data.items?.length || 0);
     } catch {
       setCartCount(0);
