@@ -16,7 +16,7 @@ function AdminOrders() {
 
   const fetchOrders = async () => {
     try {
-      const res = await api.get("/admin/orders", {
+      const res = await api.get("/api/admin/orders", {
         params: {
           page,
           size: 8,
@@ -36,7 +36,7 @@ function AdminOrders() {
 
   const updateStatus = async (id, status) => {
     try {
-      const res = await api.put(`/admin/orders/${id}/status?status=${status}`);
+      const res = await api.put(`/api/admin/orders/${id}/status?status=${status}`);
       toast.success(res.data);
       fetchOrders();
     } catch (error) {
