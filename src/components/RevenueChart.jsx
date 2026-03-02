@@ -19,7 +19,7 @@ function RevenueChart() {
 
   const fetchMonthlyRevenue = async () => {
     try {
-      const res = await api.get("/admin/monthly-revenue");
+      const res = await api.get("/api/admin/monthly-revenue");
 
       const monthOrder = [
         "JANUARY",
