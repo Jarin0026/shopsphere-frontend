@@ -35,12 +35,12 @@ function VendorDashboard() {
 
   useEffect(() => {
     fetchAnalytics();
-    fetchMonthlyRevenue(); // ✅ Call it here
+    fetchMonthlyRevenue(); 
   }, []);
 
   const fetchAnalytics = async () => {
     try {
-      const res = await api.get("/vendor/analytics");
+      const res = await api.get("/api/vendor/analytics");
       setAnalytics(res.data);
     } catch (error) {
       toast.error(error.response?.data?.message || "Failed to load analytics.");
@@ -49,7 +49,7 @@ function VendorDashboard() {
 
   const fetchMonthlyRevenue = async () => {
     try {
-      const res = await api.get("/vendor/monthly-revenue");
+      const res = await api.get("/api/vendor/monthly-revenue");
 
       const formatted = Object.entries(res.data)
         .sort((a, b) => new Date(a[0]) - new Date(b[0])) // sort by date
@@ -84,7 +84,7 @@ function VendorDashboard() {
 
   return (
     <div className="space-y-12">
-      {/* ================= Header ================= */}
+      
       <div className="space-y-2">
         <h1 className="text-3xl font-semibold tracking-tight">
           Vendor Dashboard
@@ -94,7 +94,7 @@ function VendorDashboard() {
         </p>
       </div>
 
-      {/* ================= KPI CARDS ================= */}
+      
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <div className="group bg-white dark:bg-gray-800 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 p-8">
           <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -120,7 +120,7 @@ function VendorDashboard() {
         </div>
       </div>
 
-      {/* ================= CHARTS SECTION ================= */}
+      
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         {/* Order Status Pie */}
         <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-8 transition-all duration-300">
@@ -144,7 +144,7 @@ function VendorDashboard() {
           </ResponsiveContainer>
         </div>
 
-        {/* Monthly Revenue */}
+        
         <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-lg p-8 transition-all duration-300">
           <h2 className="text-lg font-semibold mb-6">Monthly Revenue</h2>
 
