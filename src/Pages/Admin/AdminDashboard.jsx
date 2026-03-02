@@ -15,7 +15,7 @@ function AdminDashboard() {
 
   const fetchAnalytics = async () => {
     try {
-      const res = await api.get("/admin/analytics");
+      const res = await api.get("/api/admin/analytics");
       setData(res.data);
     } catch (error) {
       toast.error(error.response?.data?.message || "Failed to load analytics.");
