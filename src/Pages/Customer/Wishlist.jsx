@@ -13,7 +13,7 @@ function Wishlist() {
 
   const fetchWishlist = async () => {
     try {
-      const res = await api.get("/wishlist");
+      const res = await api.get("/api/wishlist");
       setProducts(res.data);
     } catch (error) {
       toast.error(error.response?.data?.message || "Failed to load wishlist.");
@@ -22,7 +22,7 @@ function Wishlist() {
 
   const removeFromWishlist = async (productId) => {
     try {
-      const res = await api.post(`/wishlist/${productId}`);
+      const res = await api.post(`/api/wishlist/${productId}`);
 
       toast.success(res.data);
 
