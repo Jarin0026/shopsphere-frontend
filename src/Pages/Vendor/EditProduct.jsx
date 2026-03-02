@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import api from "../../services/Api";
+import api from "../../services/Api.js";
 import toast from "react-hot-toast";
 
 function EditProduct() {
