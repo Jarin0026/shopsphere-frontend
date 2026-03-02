@@ -14,7 +14,7 @@ function MyOrders() {
 
   const fetchOrders = async () => {
     try {
-      const res = await api.get("/orders/my");
+      const res = await api.get("/api/orders/my");
       setOrders(res.data);
     } catch (err) {
       toast.error(err.response?.data?.message || "Failed to load orders");
