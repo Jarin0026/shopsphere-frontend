@@ -26,7 +26,7 @@ function Checkout() {
 
   const fetchAddresses = async () => {
     try {
-      const res = await api.get("/addresses");
+      const res = await api.get("/api/addresses");
       setAddresses(res.data);
       console.log(res.data);
 
@@ -47,10 +47,10 @@ function Checkout() {
 
     try {
       const res = await api.post(
-        `/orders/checkout?addressId=${selectedAddress}`,
+        `/api/orders/checkout?addressId=${selectedAddress}`,
       );
       const orderId = res.data.split(":")[1]?.trim();
-      navigate(`/customer/payment/${orderId}`);
+      navigate(`/api/customer/payment/${orderId}`);
       toast.success("Ordered created. Proceed to payment.");
     } catch (error) {
       toast.error(error.response?.data?.message || "Checkout failed.");
@@ -68,7 +68,7 @@ function Checkout() {
 
   const handleAddAddress = async () => {
     try {
-      await api.post("/addresses", newAddress);
+      await api.post("/api/addresses", newAddress);
 
       toast.success("Address added successfully");
 
