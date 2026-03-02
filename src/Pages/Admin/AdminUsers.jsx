@@ -13,7 +13,7 @@ function AdminUsers() {
 
   const fetchUsers = async () => {
     try {
-      const res = await api.get("/admin/users", {
+      const res = await api.get("/api/admin/users", {
         params: {
           search: search || undefined,
           role: role || undefined,
@@ -28,7 +28,7 @@ function AdminUsers() {
 
   const toggleUser = async (id) => {
     try {
-      const res = await api.put(`/admin/users/${id}/toggle`);
+      const res = await api.put(`/api/admin/users/${id}/toggle`);
       toast.success(res.data);
       fetchUsers();
     } catch (error) {
