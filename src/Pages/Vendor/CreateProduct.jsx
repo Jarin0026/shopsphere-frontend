@@ -28,7 +28,7 @@ function CreateProduct() {
 
   const fetchCategories = async () => {
     try {
-      const res = await api.get("/categories");
+      const res = await api.get("/api/categories");
       setCategories(res.data);
     } catch (err) {
       toast.error(err.response?.data?.message || "Failed to load categories");
@@ -66,7 +66,7 @@ function CreateProduct() {
         formData.append("images", file);
       });
 
-      await api.post("/products", formData, {
+      await api.post("/api/products", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
