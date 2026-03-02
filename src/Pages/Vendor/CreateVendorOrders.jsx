@@ -43,7 +43,7 @@ function CreatevendorOrders() {
 
   const fetchOrders = async () => {
     try {
-      const res = await api.get("/vendor/orders");
+      const res = await api.get("/api/vendor/orders");
       setOrders(res.data);
       console.log(res.data);
     } catch (error) {
@@ -53,7 +53,7 @@ function CreatevendorOrders() {
 
   const updateStatus = async (orderId, newStatus) => {
     try {
-      await api.put(`/orders/${orderId}/status`, null, {
+      await api.put(`/api/orders/${orderId}/status`, null, {
         params: { status: newStatus },
       });
       toast.success(`Order update to ${newStatus}`);
@@ -78,7 +78,7 @@ function CreatevendorOrders() {
 
   return (
     <div className="space-y-10">
-      {/* ================= Header ================= */}
+      
       <div className="space-y-2">
         <h1 className="text-3xl font-semibold tracking-tight">Manage Orders</h1>
         <p className="text-gray-500 dark:text-gray-400 text-sm">
@@ -86,7 +86,7 @@ function CreatevendorOrders() {
         </p>
       </div>
 
-      {/* ================= Filter Bar ================= */}
+      
       <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-md p-6 space-y-4">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
           <select
@@ -159,7 +159,7 @@ function CreatevendorOrders() {
                 key={order.orderId}
                 className="bg-white dark:bg-gray-800 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 p-8"
               >
-                {/* Top Section */}
+                
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
                   <div className="space-y-2">
                     <h2 className="text-lg font-semibold">
