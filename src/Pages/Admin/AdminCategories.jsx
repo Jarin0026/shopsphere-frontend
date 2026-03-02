@@ -12,7 +12,7 @@ function AdminCategories() {
 
   const fetchCategories = async () => {
     try {
-      const res = await api.get("/admin/categories");
+      const res = await api.get("/api/admin/categories");
       setCategories(res.data);
     } catch (error) {
       toast.error(
@@ -28,7 +28,7 @@ function AdminCategories() {
     }
 
     try {
-      await api.post("/admin/categories", null, {
+      await api.post("/api/admin/categories", null, {
         params: { name },
       });
 
@@ -42,7 +42,7 @@ function AdminCategories() {
 
   const handleDelete = async (id) => {
     try {
-      await api.delete(`/admin/categories/${id}`);
+      await api.delete(`/api/admin/categories/${id}`);
       toast.success("Category deleted.");
       fetchCategories();
     } catch (error) {
