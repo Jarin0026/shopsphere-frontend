@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+/* ========================================
+   Base Theme (Light Mode - Default)
+======================================== */
+
+body {
+  @apply bg-gray-100 text-gray-400 antialiased;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ========================================
+   Sidebar
+======================================== */
+
+.sidebar {
+  @apply bg-gray-900 text-white shadow-lg;
+  transition: background-color 0.3s ease;
+}
+
+/* ========================================
+   Buttons
+======================================== */
+
+.btn-primary {
+  @apply bg-gray-800 text-white font-medium px-4 py-2 rounded-lg 
+         transition-all duration-300 ease-in-out 
+         hover:bg-gray-700 hover:shadow-md active:scale-95;
+}
+
+.btn-logout {
+  @apply bg-white text-gray-900 font-medium px-4 py-2 rounded-lg 
+         border border-gray-300
+         transition-all duration-300 ease-in-out
+         hover:bg-gray-100 hover:shadow-sm active:scale-95;
+}
+
+/* ========================================
+   Dark Theme
+======================================== */
+
+body.dark {
+  @apply bg-gray-900 text-gray-100;
+}
+
+body.dark .sidebar {
+  @apply bg-gray-800;
+}
+
+body.dark .btn-primary {
+  @apply bg-gray-700 hover:bg-gray-600;
+}
+
+body.dark .btn-logout {
+  @apply bg-gray-200 text-gray-900 hover:bg-gray-300;
+}
+
+.input-field {
+  @apply w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 
+  bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 
+  focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-blue-500 
+  transition-all duration-200;
+}
+
+.dashboard-card {
+  @apply bg-white dark:bg-gray-800 rounded-3xl shadow-md 
+  hover:shadow-xl transition-all duration-300;
+}
