@@ -31,7 +31,7 @@ function Payment() {
             });
 
             toast.success("Payment successful");
-            navigate("/api/customer/orders");
+            navigate("/customer/orders");
           } catch (err) {
             toast.error("Payment verification failed");
           }
