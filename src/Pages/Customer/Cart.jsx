@@ -14,7 +14,7 @@ function Cart() {
 
   const fetchCart = async () => {
     try {
-      const res = await api.get("/cart");
+      const res = await api.get("/api/cart");
       setCart(res.data);
       console.log(res.data);
     } catch (error) {
@@ -24,7 +24,7 @@ function Cart() {
 
   const updateQuantity = async (itemId, quantity) => {
     try {
-      await api.put(`/cart/update?cartItemId=${itemId}&quantity=${quantity}`);
+      await api.put(`/api/cart/update?cartItemId=${itemId}&quantity=${quantity}`);
       toast.success("Cart updated.");
 
       fetchCart();
@@ -36,7 +36,7 @@ function Cart() {
 
   const removeItem = async (itemId) => {
     try {
-      await api.delete(`/cart/remove/${itemId}`);
+      await api.delete(`/api/cart/remove/${itemId}`);
       toast.success("Item removed.");
       fetchCart();
       window.dispatchEvent(new Event("cartUpdated"));
@@ -50,7 +50,7 @@ function Cart() {
 
     // Optional small delay for better UX feel
     setTimeout(() => {
-      navigate("/customer/checkout");
+      navigate("/api/customer/checkout");
     }, 400);
   };
 
