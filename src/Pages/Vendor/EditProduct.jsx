@@ -28,7 +28,7 @@ function EditProduct() {
 
   const fetchProduct = async () => {
     try {
-      const res = await api.get(`/products/${id}`);
+      const res = await api.get(`/api/products/${id}`);
 
       setForm({
         name: res.data.name || "",
@@ -46,7 +46,7 @@ function EditProduct() {
 
   const fetchCategories = async () => {
     try {
-      const res = await api.get("/categories");
+      const res = await api.get("/api/categories");
       setCategories(res.data || []);
     } catch (error) {
       toast.error(
@@ -95,7 +95,7 @@ function EditProduct() {
 
       formData.append("existingImages", JSON.stringify(existingImages));
 
-      await api.put(`/products/${id}`, formData, {
+      await api.put(`/api/products/${id}`, formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
