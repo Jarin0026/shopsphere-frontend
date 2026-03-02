@@ -184,7 +184,7 @@ function Products() {
           <div
             key={product.id}
             className="group bg-white dark:bg-gray-800 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer overflow-hidden"
-            onClick={() => navigate(`/api/customer/product/${product.id}`)}
+            onClick={() => navigate(`/customer/product/${product.id}`)}
           >
             <div className="relative bg-gray-50 dark:bg-gray-900 p-6 flex items-center justify-center">
               <img
