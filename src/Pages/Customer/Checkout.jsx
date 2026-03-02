@@ -50,7 +50,7 @@ function Checkout() {
         `/api/orders/checkout?addressId=${selectedAddress}`,
       );
       const orderId = res.data.split(":")[1]?.trim();
-      navigate(`/api/customer/payment/${orderId}`);
+      navigate(`/customer/payment/${orderId}`);
       toast.success("Ordered created. Proceed to payment.");
     } catch (error) {
       toast.error(error.response?.data?.message || "Checkout failed.");
