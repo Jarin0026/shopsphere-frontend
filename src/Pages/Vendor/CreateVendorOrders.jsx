@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import api from "../../services/Api";
+import api from "../../services/Api.js";
 import toast from "react-hot-toast";
 
 function CreatevendorOrders() {
