@@ -82,7 +82,7 @@ function Cart() {
           </p>
 
           <button
-            onClick={() => navigate("/api/customer")}
+            onClick={() => navigate("/customer")}
             className="px-8 py-3 rounded-2xl bg-black dark:bg-blue-600 text-white font-medium shadow-md hover:shadow-xl hover:scale-[1.03] transition cursor-pointer"
           >
             Browse Products
@@ -168,7 +168,7 @@ function Cart() {
             </div>
 
             <button
-              onClick={() => navigate("/api/customer/checkout")}
+              onClick={() => navigate("/customer/checkout")}
               className="w-full py-4 rounded-2xl bg-black dark:bg-blue-600 text-white font-semibold text-lg shadow-md hover:shadow-xl hover:scale-[1.02] active:scale-[0.97] transition-all cursor-pointer duration-200"
             >
               Proceed to Checkout
