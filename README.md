@@ -1,16 +1,52 @@
-# React + Vite
+## Frontend – React Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Frontend (React) → REST API → Spring Boot → MySQL Database**
 
-Currently, two official plugins are available:
+The frontend of ShopSphere is built using React.js. It delivers a modern, responsive, and user-friendly shopping experience where customers, vendors, and admins can interact seamlessly with the platform.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+### What the frontend does:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🔐 User Registration & Login (JWT Authentication + Role-Based Access)  
+🛍 Browse products by categories  
+🔎 Search & filter products  
+📄 View detailed product information  
+🛒 Add to Cart & Manage Cart Items  
+❤️ Wishlist functionality  
+💳 Secure checkout & Razorpay payment integration  
+📦 Order placement & order tracking  
+👤 Customer Dashboard (orders, profile, wishlist)  
+🏪 Vendor Dashboard (add, edit, delete products)  
+🛠 Admin Dashboard (manage users, vendors & products)  
+📱 Fully responsive design  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Key Responsibilities of Frontend:
+
+* Handles complete UI/UX experience  
+* Sends REST API requests to backend using Axios  
+* Stores JWT token securely  
+* Implements protected routes based on user roles  
+* Manages global state for cart & authentication  
+* Handles form validations  
+* Displays real-time order & product data  
+* Integrates Razorpay payment flow  
+
+---
+
+### Frontend Tech Stack:
+
+* React.js  
+* Axios  
+* Tailwind CSS  
+* React Router  
+* Razorpay Integration  
+* Context API / State Management  
+
+---
+
+### Backend Repository:
+
+[Backend Repository](https://github.com/Jarin0026/shopsphere-backend)
